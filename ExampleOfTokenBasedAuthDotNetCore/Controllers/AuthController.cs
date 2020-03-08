@@ -16,7 +16,7 @@ namespace ExampleOfTokenBasedAuthDotNetCore.Controllers
         {
             _authService = authService;
         }
-        [HttpPost("LoginAdmin")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody]TokenRequest request)
         {
             try

@@ -11,7 +11,7 @@ namespace ExampleOfTokenBasedAuthDotNetCore.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class GeneralController : ControllerBase
+    public class GeneralController : Controller
     {
         // GET: api/General
         [HttpGet]
