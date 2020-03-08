@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityModel.Client;
 
 namespace ExampleOfTokenBasedAuthDotNetCore
 {
@@ -12,7 +11,15 @@ namespace ExampleOfTokenBasedAuthDotNetCore
 
         public bool IsAuthenticated(TokenRequest request, out string token)
         {
+
             token = string.Empty;
+            if (!_userManagementService.IsValidUser(request.Username, request.Password)) return false;
+
+            var claim = new[]
+            {
+                new Claim(ClaimTypes.Name, request.Username)
+            };
+
             return false;
         }
     }
