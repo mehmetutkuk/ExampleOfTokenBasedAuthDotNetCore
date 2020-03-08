@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ExampleOfTokenBasedAuthDotNetCore
 {
-    public class UserManagementService
+    public class UserManagementService : IUserManagementService
     {
 
         public bool IsValidUser(string userName, string password)
@@ -20,5 +20,9 @@ namespace ExampleOfTokenBasedAuthDotNetCore
             }
 
         }
+    }
+    public interface IUserManagementService
+    {
+        bool IsValidUser(string username, string password);
     }
 }
